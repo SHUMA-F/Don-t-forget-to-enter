@@ -17,3 +17,4 @@ st.write('count = ', st.session_state.count)
 
 d = st.date_input('誕生日を入力してください。', datetime.date(1998, 2, 16))
 st.write('私の誕生日は：', d)
+st.write('ですね！')
