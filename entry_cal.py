@@ -329,4 +329,5 @@ with col2:
 
 st.divider()
 st.subheader("Google カレンダーに送信")
+st.button("Googleカレンダーにイベントを送信")
     
