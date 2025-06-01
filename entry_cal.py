@@ -295,6 +295,7 @@ for ev in valid_events_for_calendar:
 with col1:
     st.subheader("イベント申込締切日")
     calendar_options_deadline = {
+        "locale": "ja",
         "headerToolbar": {"left": "prev,next today", "center": "title", "right": "dayGridMonth,timeGridWeek,listWeek"},
         "initialView": "dayGridMonth", "height": "auto"
     }
@@ -317,7 +318,18 @@ for ev in valid_events_for_calendar:
 with col2:
     st.subheader("イベント日")
     calendar_options_event_date = {
+        "locale": "ja",
         "headerToolbar": {"left": "prev,next today", "center": "title", "right": "dayGridMonth,timeGridWeek,listWeek"},
         "initialView": "dayGridMonth", "selectable": True, "height": "auto"
     }
     st_calendar.calendar(events=calendar_events_date_display, options=calendar_options_event_date, key="event_date_calendar")
+
+st.divider()
+st.subheader("Google カレンダーに送信")
+if st.button("Googleカレンダーにイベントを送信"):
+    # app.py を実行して、events_data.json の内容を Google カレンダーへ反映
+    try:
+        subprocess.run(["python", "app.py"], check=True)
+        st.success(":チェックマーク_緑: Google カレンダーへの送信が完了しました！")
+    except Exception as e:
+        st.error(f":警告: Google カレンダーへの送信中にエラーが発生しました: {e}")
