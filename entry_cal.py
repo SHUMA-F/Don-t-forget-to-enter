@@ -107,6 +107,9 @@ if st.session_state.load_event_to_form_flag and st.session_state.editing_event_i
         st.session_state[FORM_EVENT_DESCRIPTION_KEY] = event_to_load.get('description', '')
     st.session_state.load_event_to_form_flag = False
 
+#ページ設定
+st.set_page_config(page_title="エントリー忘れナイン", layout="wide") # ページ設定の例
+st.title("🗓️ エントリー忘れナイン")
 
 #お知らせ (変更なし、ただし日付がないイベントは適切に除外)
 st.subheader("🔔 お知らせ")
