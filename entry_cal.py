@@ -326,10 +326,4 @@ with col2:
 
 st.divider()
 st.subheader("Google カレンダーに送信")
-if st.button("Googleカレンダーにイベントを送信"):
-    # app.py を実行して、events_data.json の内容を Google カレンダーへ反映
-    try:
-        subprocess.run(["python", "app.py"], check=True)
-        st.success(":チェックマーク_緑: Google カレンダーへの送信が完了しました！")
-    except Exception as e:
-        st.error(f":警告: Google カレンダーへの送信中にエラーが発生しました: {e}")
+    
